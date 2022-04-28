@@ -1,9 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
-import RestaurantList from './mobx/RestaurantList';
-import { Route } from 'react-router';
-import {Router} from 'react-router';
-
+// import RestaurantList from './mobx/RestaurantList';
+// import { Route } from 'react-router';
+// import {Router} from 'react-router';
+import IssueStore from './mobx-react/IssueStoreContext';
+import IssueForm from './mobx-react/IssueForm';
+import IssueList from './mobx-react/IssueList';
 function App() {
   return (
     // <div className="App">
@@ -22,10 +24,13 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-
-    <Router>
-      <Route path="/" exact component={RestaurantList} />
-    </Router>
+<IssueStore>
+  <IssueForm />
+  <IssueList />
+</IssueStore>
+    // <Router>
+    //   <Route path="/" exact component={RestaurantList} />
+    // </Router>
   );
 }
 
